@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-    domains: [],
+    domains: ['img.2am.top'],
   },
 }
 
