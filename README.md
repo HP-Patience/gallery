@@ -1,15 +1,17 @@
 # 极简风格相册应用
 
-这是一个基于 Next.js 构建的现代化相册应用，具有极简风格设计和瀑布流布局。
+一个基于 Next.js 构建的现代化相册应用，具有极简风格设计和瀑布流布局
+
+## 预览
+
+👉 ![我的相册](https://img.2am.top)
 
 ## 功能特点
 
-- 🎨 极简风格设计，白底黑字（支持夜间模式）
+- 🎨 极简风格
 - 📱 响应式设计，适配各种设备
 - 🖼️ 瀑布流布局展示图片
-- 🌓 支持夜间模式切换
 - 📁 自动识别相册文件夹
-- 🔍 图片全屏查看，支持键盘导航
 - 🎲 随机排列图片
 
 ## 技术栈
@@ -18,9 +20,6 @@
 - React 18
 - TypeScript
 - Tailwind CSS
-- next-themes（主题切换）
-- react-masonry-css（瀑布流布局）
-- lucide-react（图标）
 
 ## 安装和运行
 
@@ -32,6 +31,18 @@ npm install
 2. 启动开发服务器：
 ```bash
 npm run dev
+```
+
+## 构建和部署
+
+1. 构建生产版本：
+```bash
+npm run build
+```
+
+2. 启动生产服务器：
+```bash
+npm start
 ```
 
 3. 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
@@ -82,17 +93,6 @@ gallery-app/
 └── package.json          # 项目依赖
 ```
 
-## 构建和部署
-
-1. 构建生产版本：
-```bash
-npm run build
-```
-
-2. 启动生产服务器：
-```bash
-npm start
-```
 
 ## 许可证
 
