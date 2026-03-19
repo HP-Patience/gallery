@@ -7,11 +7,22 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const startTime = performance.now();
     fetch('/api/images')
       .then(res => res.json())
       .then(data => {
+        const endTime = performance.now();
+        const loadTime = Math.round(endTime - startTime);
         setImages(data.images);
         setLoading(false);
+        
+        // 发送自定义事件，通知Layout组件图片已加载
+        window.dispatchEvent(new CustomEvent('imagesLoaded', {
+          detail: {
+            count: data.images.length,
+            time: loadTime
+          }
+        }));
       })
       .catch(error => {
         console.error('加载图片失败:', error);

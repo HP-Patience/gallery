@@ -2,13 +2,44 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
+import { useRouter } from 'next/router';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const [loadingInfo, setLoadingInfo] = useState<{ count: number; time: number } | null>(null);
+  const [showLoadingInfo, setShowLoadingInfo] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    // 只在首页显示加载信息
+    if (router.pathname === '/' && loadingInfo) {
+      setShowLoadingInfo(true);
+      
+      // 3秒后自动隐藏
+      const timer = setTimeout(() => {
+        setShowLoadingInfo(false);
+      }, 3000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [loadingInfo, router.pathname]);
+
+  // 监听图片加载完成事件
+  useEffect(() => {
+    const handleImagesLoaded = (event: CustomEvent) => {
+      const { count, time } = event.detail;
+      setLoadingInfo({ count, time });
+    };
+
+    window.addEventListener('imagesLoaded', handleImagesLoaded as EventListener);
+    return () => {
+      window.removeEventListener('imagesLoaded', handleImagesLoaded as EventListener);
+    };
   }, []);
 
   return (
@@ -18,6 +49,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/" className="text-xl font-bold text-black dark:text-white">
             未来的相册
           </Link>
+          
+          {/* 图片加载信息提示 - 仅在桌面端显示 */}
+          {showLoadingInfo && (
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 transition-opacity duration-500 opacity-100">
+              <div className="px-4 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">
+                {loadingInfo.count}张图片加载于{loadingInfo.time}ms
+              </div>
+            </div>
+          )}
+          
           <nav className="flex items-center gap-6">
             <Link href="/" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
               主页
