@@ -60,7 +60,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           )}
           
           <nav className="flex items-center gap-6">
-            <a href="https://hp-patience.github.io" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+            <a href="https://www.celyn-blog.xyz" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
               ← 返回博客
             </a>
             <Link href="/" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
