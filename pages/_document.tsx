@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="zh-CN">
       <Head>
+        <title>Celyn 的相册</title>
         <meta name="description" content="极简风格相册应用" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

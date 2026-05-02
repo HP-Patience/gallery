@@ -47,7 +47,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/80">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="text-xl font-bold text-black dark:text-white">
-            未来的相册
+            Celyn 的相册
           </Link>
           
           {/* 图片加载信息提示 - 仅在桌面端显示 */}
@@ -60,14 +60,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           )}
           
           <nav className="flex items-center gap-6">
+            <a href="https://hp-patience.github.io" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+              ← 返回博客
+            </a>
             <Link href="/" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
               主页
             </Link>
             <Link href="/albums" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
               相册
-            </Link>
-            <Link href="https://2am.top" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
-              博客
             </Link>
             <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
               关于

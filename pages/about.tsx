@@ -3,104 +3,110 @@ import Layout from '../components/Layout';
 export default function About() {
   return (
     <Layout>
-      <div className="max-w-2xl">
-        <h1 className="mb-6 text-3xl font-bold text-black dark:text-white">
-          关于
+      <div className="max-w-2xl mx-auto">
+        {/* 标题 */}
+        <h1 className="text-4xl font-bold mb-8 text-center dark:text-white">
+          关于 Celyn
         </h1>
 
-        <div className="space-y-4 text-gray-700 dark:text-gray-300">
-          <p>
-            这里是LSR的相册，放着一些我的摄影作品  
-          </p>
-          <p>
-            我喜欢拿着相机四处闲逛，记录任何事物  
-          </p>
-          <p>
-            因此如你所见，我的作品没有一个明确的 ⌈ 主题 ⌋   
-          </p>
-          <p>
-            看见，记录，思考，回味，这就是我摄影的全部
-          </p>
-          <br/>
-          <h2 className="mt-6 text-3xl font-semibold text-black dark:text-white">
-            装备
-          </h2>
+        {/* 个人介绍卡片 */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            {/* 头像 */}
+            <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
+              <img
+                src="https://raw.githubusercontent.com/HP-Patience/HP-Patience.github.io/main/avatar_img/me.jpg"
+                alt="Celyn"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          <ul className="list-inside list-disc space-y-2">
-            <li>Cannon 5D4 24-70mm</li>
-            <li>Cannon 60D 70-300mm 100-400mm 50mm 18-135mm</li>
-            <li>好兄弟的Sony A7M3 24-70mm</li>
-            <li>好兄弟的Sony α6600 70-180mm</li>
-            <li>DJI Action 3</li>
-            <li>DJI MINI 4 Pro</li>
-            
-          </ul>
-<br/>
+            {/* 基本信息 */}
+            <div className="text-center md:text-left">
+              <h2 className="text-2xl font-semibold mb-2 dark:text-white">Celyn</h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-3">
+                📍 上海, 中国
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                费曼学习法践行者<br />
+                反思近期所学并反馈输出<br />
+                将所学知识内化
+              </p>
+            </div>
+          </div>
+        </div>
 
-          <h2 className="mt-6 text-3xl font-semibold text-black dark:text-white">
-            技术栈
-          </h2>
+        {/* 关于这个相册 */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+          <h2 className="text-2xl font-semibold mb-4 dark:text-white">📸 关于这个相册</h2>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            这里记录着我生活中的点点滴滴——从日常随拍到旅行见闻，
+            从学习笔记到灵感瞬间。每一张照片都是一个故事，
+            每一个瞬间都值得被珍藏。
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            我们所经历的每个平凡日常，都是连续发生的奇迹。
+          </p>
+        </div>
 
-          <p>
-            本站使用Next.js构建，部署在Github上，通过EdgeOne加速
-          </p>
-          <p>
-            框架已在<a href="https://github.com/forever218/gallery" style={{ color: 'blue' }}>Github</a>开源
-          </p>
-          <br/>
+        {/* 技术栈 */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+          <h2 className="text-2xl font-semibold mb-4 dark:text-white">🛠️ 技术栈</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2 dark:text-white">前端框架</h3>
+              <p className="text-gray-600 dark:text-gray-400">Next.js 14 + React 18</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2 dark:text-white">样式方案</h3>
+              <p className="text-gray-600 dark:text-gray-400">Tailwind CSS</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2 dark:text-white">部署平台</h3>
+              <p className="text-gray-600 dark:text-gray-400">Vercel</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2 dark:text-white">博客框架</h3>
+              <p className="text-gray-600 dark:text-gray-400">Hexo + Icarus</p>
+            </div>
+          </div>
+        </div>
 
-          <h2 className="mt-6 text-3xl font-semibold text-black dark:text-white">
-            其他问题
-          </h2>
+        {/* 联系方式 */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-semibold mb-4 dark:text-white">📬 联系方式</h2>
+          <div className="space-y-3">
+            <a
+              href="https://github.com/HP-Patience"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <span className="text-xl">💻</span>
+              <span>GitHub: @HP-Patience</span>
+            </a>
+            <a
+              href="mailto:1249140039@qq.com"
+              className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <span className="text-xl">📧</span>
+              <span>Email: 1249140039@qq.com</span>
+            </a>
+            <a
+              href="https://hp-patience.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <span className="text-xl">🌐</span>
+              <span>博客: hp-patience.github.io</span>
+            </a>
+          </div>
+        </div>
 
-          <p>
-            为什么图片看起来很模糊？
-          </p>
-          <p>
-            考虑到服务器压力和带宽负载，所有图片均经过数层压缩
-          </p>
-          <br/>
-          <h2 className="mt-6 text-3xl font-semibold text-black dark:text-white">
-            政策
-          </h2>
-          <p>
-            本站不会收集您的任何信息
-          </p>
-          <p>
-            所有图片均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style={{ color: 'blue' }}>CC BY-NC-SA 4.0</a>协议
-<span style={{ display: 'inline-flex', alignItems: 'center', marginLeft: '.2em' }}>
-  <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style={{ maxWidth: '1em', maxHeight: '1em' }} />
-  <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style={{ maxWidth: '1em', maxHeight: '1em', marginLeft: '.2em' }} />
-  <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style={{ maxWidth: '1em', maxHeight: '1em', marginLeft: '.2em' }} />
-  <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style={{ maxWidth: '1em', maxHeight: '1em', marginLeft: '.2em' }} />
-</span>
-
-            </p>
-          <p>
-            您可以在遵循该协议的条件下自由使用
-          </p>
-          <p>
-            严禁用于任何商业、违法用途
-          </p>
-<br/>
-          <h2 className="mt-6 text-3xl font-semibold text-black dark:text-white">
-            联系我
-          </h2>
-
-          <p>
-            如有任何问题、摄影上的交流
-          </p>
-          <p>
-            亦或是约拍、合作，欢迎通过邮箱联系我
-          </p>
-          <p>
-            3316703158@qq.com
-          </p>
-<br/>
-<br/>
-          <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-            LSR最后编辑于 2026.3.18  ：）
-          </p>
+        {/* 页脚信息 */}
+        <div className="mt-12 text-center text-gray-500 dark:text-gray-500 text-sm">
+          <p>© 2024 Celyn. Made with ❤️ and Next.js</p>
         </div>
       </div>
     </Layout>
